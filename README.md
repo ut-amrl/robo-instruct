@@ -1,9 +1,8 @@
 
 
-## Robo-Instruct: Simulator-Augmented Instruction Alignment For Finetuning CodeLLMs (Code Coming Soon)
+## Robo-Instruct: Simulator-Augmented Instruction Alignment For Finetuning CodeLLMs (Code+Data Coming Soon)
 
-
-#### [[Project Page]](https://amrl.cs.utexas.edu/robo-instruct/) [[Paper]]() 
+#### [[Project Page]](https://amrl.cs.utexas.edu/robo-instruct/) [[Paper]](https://amrl.cs.utexas.edu/robo-instruct/assets/document/Democratizing_LLM_arvix.pdf) 
 
 
 

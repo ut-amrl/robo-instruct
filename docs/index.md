@@ -20,7 +20,7 @@ order: 1
     </h5>
   </a>
 
-  <a role="button" class="btn btn-outline-secondary" style="margin:20pt; height:40px;" href="">
+  <a role="button" class="btn btn-outline-secondary" style="margin:20pt; height:40px;" href="assets/documents/Democratizing_LLM_arvix.pdf">
     <h5>
       <img src="assets/images/document_icon.png" style="height:30px;"/> Paper
     </h5>
