@@ -28,5 +28,18 @@ function displayNext() {
     }
 }
 
+function toggleContent(type) {
+    var demoContent = document.getElementById('demoContent');
+    var videoContent = document.getElementById('videoContent');
+
+    if (type === 'demo') {
+        demoContent.classList.add('show');
+        videoContent.classList.remove('show');
+    } else if (type === 'video') {
+        videoContent.classList.add('show');
+        demoContent.classList.remove('show');
+    }
+}
+
 updateButtons(); // Initial button state check
 
