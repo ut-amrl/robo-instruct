@@ -52,13 +52,32 @@ Large language models (LLMs) have shown great promise at generating robot progra
   <img src="assets/images/dynamic_eval_algorithm.png" alt="robo-instruct framework">
 </div>
 
-<h2 style="text-align: left;">RoboSim Demo Example</h2>
-<div class="container text-center mt-5">
+<h2 style="text-align: left;">RoboSim Example</h2>
+<div class="text-center">
+  <label class="toggle-switch">
+      <input type="radio" name="toggle" id="videoBtn" checked onchange="toggleContent('video')">
+      <span class="slider"></span>
+  </label>
+  <strong>Video</strong>
+  <label class="toggle-switch">
+      <input type="radio" name="toggle" id="demoBtn" onchange="toggleContent('demo')">
+      <span class="slider"></span>
+  </label>
+  <strong>Interactive Demo</strong>
+</div>
+<div id="videoContent" class="demo-content show">
+  <h4><strong>Video</strong></h4>
+  <video muted autoplay loop>
+    <source src="assets/media/robosim_animation.mp4" type="video/mp4">
+  </video>
+</div>
+<div id="demoContent" class="demo-content">
+  <h4><strong>Interactive Demo</strong></h4>
+  <div class="text-center mt-2" style="margin: 15px">
     <div id="mediaDisplay" class="media-container">
-        <!-- Preload all images and initially hide them except the first one -->
         <img src="assets/images/robosim_example/Slide1.PNG" alt="Slide 1" class="media-slide active" style="width: 100%;">
         <video muted autoplay class="media-slide" style="width: 100%; display: none;">
-          <source src="assets/media/example_1.mp4" >
+          <source src="assets/media/robosim_example_slide_1.mp4" type="video/mp4">
         </video>
         <img src="assets/images/robosim_example/Slide2.PNG" alt="Slide 2" class="media-slide" style="width: 100%; display: none;">
         <img src="assets/images/robosim_example/Slide3.PNG" alt="Slide 3" class="media-slide" style="width: 100%; display: none;">
@@ -75,13 +94,14 @@ Large language models (LLMs) have shown great promise at generating robot progra
         <img src="assets/images/robosim_example/Slide14.PNG" alt="Slide 14" class="media-slide" style="width: 100%; display: none;">
         <img src="assets/images/robosim_example/Slide15.PNG" alt="Slide 15" class="media-slide" style="width: 100%; display: none;">
         <video muted autoplay class="media-slide" style="width: 100%; display: none;">
-          <source src="assets/media/example_16.mp4" >
+          <source src="assets/media/robosim_example_slide_16.mp4" type="video/mp4">
         </video>
     </div>
     <div class="mt-3">
-        <button id="prevBtn" class="btn btn-dark" onclick="displayPrevious()" style="margin-right:2rem" >Display Previous</button>
-        <button id="nextBtn" class="btn btn-dark" onclick="displayNext()" style="margin-left:2rem" >Display Next</button>
+        <button id="prevBtn" class="btn btn-primary" onclick="displayPrevious()" style="margin-right:2rem" >Display Previous</button>
+        <button id="nextBtn" class="btn btn-primary" onclick="displayNext()" style="margin-left:2rem" >Display Next</button>
     </div>
+  </div>
 </div>
 
 <script src="assets/js/robosim_demo.js"></script>
