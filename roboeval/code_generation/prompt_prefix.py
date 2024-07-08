@@ -131,4 +131,4 @@ def task_program():
         place("bed sheet")
     go_to(start_loc)
 
-# 
+# Instruction: 
