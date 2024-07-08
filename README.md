@@ -24,3 +24,13 @@ Zichao Hu<sup>1</sup>, Junyi Jessy Li<sup>1</sup>, Arjun Guha<sup>2</sup>, Joyde
 | Junyi Jessy Li   | [jessy@utexas.edu](mailto:jessy@utexas.edu)          |
 | Arjun Guha       | [a.guha@northeastern.edu](mailto:a.guha@northeastern.edu) |
 | Joydeep Biswas   | [joydeepb@utexas.edu](mailto:joydeepb@utexas.edu)    |
+
+### Setup
+```bash
+pip install -e .
+```
+
+### Preliminary Documentations
+1. Part of RoboEval codes are adapted under *roboeval/*
+2. Look under *robo_instruct/generate_data/* to see how data is generated
+3. To evaluate an LLM, run *roboeval_vllm.py* at the root directory
