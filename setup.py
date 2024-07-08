@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='roboeval',
+    name='robo-instruct',
     version='0.1',
-    packages=find_packages(),
+    packages=find_packages(['roboeval', 'robo_instruct']),
     install_requires=[
         "pandas==2.0.3",
         "text_generation==0.6.1",
