@@ -1,1 +1,1 @@
-# Adapted from codebotler url
+# This is adapted from the original repository: https://github.com/ut-amrl/codebotler

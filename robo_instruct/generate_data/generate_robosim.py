@@ -1,5 +1,3 @@
-from roboeval.misc.utils import read_benchmark
-from roboeval.misc.utils import load_module
 from robo_instruct.robosim.robosim_tracer import rejection_sampling_simulation
 
 import argparse

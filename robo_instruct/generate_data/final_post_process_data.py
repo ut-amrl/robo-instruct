@@ -103,5 +103,5 @@ if __name__ == "__main__":
     data = remove_ellipsis(data)
     
     if args.overwrite_data:
-        data.to_csv("data/ri_instruction_program_5k.csv", index=False)
+        data.to_csv(args.input_data, index=False)
     
