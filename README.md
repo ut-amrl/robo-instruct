@@ -16,6 +16,16 @@ Zichao Hu<sup>1</sup>, Junyi Jessy Li<sup>1</sup>, Arjun Guha<sup>2</sup>, Joyde
 
 1. Clone the this repository from GitHub.
 
+### TBD: install unsloth
+follow instruction
+```bash
+conda create --name robo-instruct \
+    python=3.10 \
+    pytorch-cuda=12.1 \
+    pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers \
+    -y
+```
+
 ```bash
 git clone git@github.com:ut-amrl/robo-instruct.git
 ```

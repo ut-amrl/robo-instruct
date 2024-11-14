@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=7 python train.py data_args.train_data_name_or_path=/home/zichaohu/research/llm/robo-instruct/robo_instruct/generate_data/data/si_instruction_program_5k_gpt4_ru_llama3_instalign

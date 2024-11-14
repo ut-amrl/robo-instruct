@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - override /model_args: llama3
+
+data_args:
+  train_data_name_or_path: "zichao22/robo-instruct"
+
+training_args:
+  output_dir: llama3_ri_exp
+  run_name: llama3_ri_exp

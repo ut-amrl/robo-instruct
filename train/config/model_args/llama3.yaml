@@ -1,0 +1,4 @@
+model_name_or_path: unsloth/llama-3-8b
+tokenizer_name_or_path: unsloth/llama-3-8b
+
+# unsloth/llama-3-8b

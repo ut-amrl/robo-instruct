@@ -1,0 +1,2 @@
+model_name_or_path: codellama/CodeLlama-7b-Python-hf
+tokenizer_name_or_path: codellama/CodeLlama-7b-Python-hf
