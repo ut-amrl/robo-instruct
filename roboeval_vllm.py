@@ -24,7 +24,7 @@ def update_prompt(prompt, tokenizer):
     else:
         prefix = Path("roboeval/code_generation/prompt_prefix.py").read_text()
         suffix = Path("roboeval/code_generation/prompt_suffix.py").read_text()
-        prompt = prefix + "Instruction: " + prompt + suffix 
+        prompt = prefix + prompt + suffix 
     return prompt
 
 

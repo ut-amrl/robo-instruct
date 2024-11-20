@@ -6,6 +6,14 @@ defaults:
 data_args:
   train_data_name_or_path: "zichao22/robo-instruct"
 
+model_args:
+  lora_r: 64
+  lora_alpha: 64
+
 training_args:
-  output_dir: llama3_ri_exp
-  run_name: llama3_ri_exp
+  output_dir: models/llama3_ri_exp_lr3e-5_peft_constant_r64_a64
+  run_name: llama3_ri_exp_lr3e-5_peft_constant_r64_a64
+  learning_rate: 3.0e-5
+  lr_scheduler_type: constant_with_warmup
+
+  

@@ -1,5 +1,5 @@
 from roboeval.misc.utils import load_module
-from robo_instruct.misc.llm_generation_utils import post_process_vllm_generation
+from robo_instruct.misc.llm_generation_utils import post_process_vllm_generation, construct_text_field
 
 import argparse
 import pandas as pd
@@ -49,13 +49,21 @@ def gen_program(args):
     outputs = llm.generate(prompts, sampling_params)
     
     programs = post_process_vllm_generation(outputs)
-    pd.DataFrame({'prompt': instructions, 'program': programs}).to_csv(args.save_name, index=False)
+    texts = []
+
+    if args.construct_text:
+        for inst, p in zip(instructions, programs):
+            text = construct_text_field(inst, p)
+            texts.append(text)
+
+    pd.DataFrame({'prompt': instructions[:5000], 'program': programs[:5000], "text": texts[:5000]}).to_csv(args.save_name, index=False) # temp
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input_name", type=str, default="data/si_instructions.csv")
     parser.add_argument("-s", "--save_name", type=str, default="data/si_instruction_program_pairs.csv")
-    parser.add_argument("--max_rejection_sampling_count", type=int, default=3, help="rejection sampling repeat num")
+    parser.add_argument("-max", "--max_rejection_sampling_count", type=int, default=3, help="rejection sampling repeat num")
+    parser.add_argument("-t", "--construct_text", action="store_true")
     parser.add_argument("--skip_n", type=int, default=0)
     args = parser.parse_args()
     gen_program(args)

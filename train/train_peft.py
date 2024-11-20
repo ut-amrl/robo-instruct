@@ -16,7 +16,8 @@ def main(cfg: DictConfig):
     if cfg.misc_args.verbose:
         logging.set_verbosity_debug()
     if cfg.data_args.load_from_disk:
-        train_dataset = load_from_disk(cfg.data_args.train_data_name_or_path)["train"]
+        print(cfg.data_args.train_data_name_or_path)
+        train_dataset = load_from_disk(cfg.data_args.train_data_name_or_path)
     else:
         train_dataset = load_dataset(cfg.data_args.train_data_name_or_path, split="train")
 
@@ -26,6 +27,21 @@ def main(cfg: DictConfig):
         load_in_4bit=False
     )
 
+    model = FastLanguageModel.get_peft_model(
+        model,
+        r = cfg.model_args.lora_r,
+        target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
+                        "gate_proj", "up_proj", "down_proj",],
+        lora_alpha = cfg.model_args.lora_alpha,
+        lora_dropout = 0, # Supports any, but = 0 is optimized
+        bias = "none",    # Supports any, but = "none" is optimized
+        # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
+        use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
+        random_state = 3407,
+        max_seq_length = cfg.misc_args.seq_length,
+        use_rslora = False,  # We support rank stabilized LoRA
+        loftq_config = None, # And LoftQ
+    )
 
     dataset_text_field = cfg.data_args.text_column
     def inspect_inputs(inputs):
