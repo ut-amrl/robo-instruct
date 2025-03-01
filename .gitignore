@@ -8,3 +8,4 @@ eval/
 models/
 outputs/
 wandb/
+visualization/*.csv

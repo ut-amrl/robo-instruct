@@ -90,7 +90,8 @@ if __name__ == "__main__":
     overwrite_data = True
     parser = argparse.ArgumentParser()
     parser.add_argument("--overwrite_data", action="store_true")
-    parser.add_argument("--input_data", type=str, default="data/ri_instruction_program_5k.csv")
+    parser.add_argument("-i", "--input_data", type=str, default="data/ri_instruction_program_5k.csv")
+    parser.add_argument("-s", "--save_data", type=str, default="data/ri_instruction_program_5k.csv")
     args = parser.parse_args()
     
     original_data = pd.read_csv(args.input_data)
@@ -102,6 +103,9 @@ if __name__ == "__main__":
     data = remove_ellipsis(data)
     data = remove_ellipsis(data)
     
+    
     if args.overwrite_data:
         data.to_csv(args.input_data, index=False)
+    else:
+        data.to_csv(args.save_data, index=False)
     

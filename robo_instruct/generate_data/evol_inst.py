@@ -130,7 +130,7 @@ def main_vllm_llama3_inst_8b(args):
         max_tokens=1024,
         stop_token_ids=stop_token_ids)
     final_result = []
-    for i in range(1500):
+    for i in range(3000):
         print("generating batch: ", i)
         result = gather_prompts_self_instruct_vllm(llama3_llm, sampling_params, tokenizer, args, generate_n=5)
         final_result.extend(result)

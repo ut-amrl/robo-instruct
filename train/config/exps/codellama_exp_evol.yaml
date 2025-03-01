@@ -1,20 +1,15 @@
 # @package _global_
 
 defaults:
-  - override /model_args: llama3
+  - override /model_args: base
 
 data_args:
   # train_data_name_or_path: /home/zichaohu/research/llm/robo-instruct/robo_instruct/generate_data/data/evol_5k_llama3
   train_data_name_or_path: /home/zichaohu/research/llm/robo-instruct/robo_instruct/generate_data/data/evol_ri
-  load_from_disk: False
-
-model_args:
-  lora_r: 128
-  lora_alpha: 128
 
 training_args:
-  output_dir: models/llama3_evol_ri_exp_lr3e-5_peft_constant_r128_a128
-  run_name: llama3_evol_ri_exp_lr3e-5_peft_constant_r128_a128
+  output_dir: models/codellama_evol_ri_exp_lr3e-5
+  run_name: codellama_evol_ri_exp_lr3e-5
   learning_rate: 3.0e-5
   lr_scheduler_type: constant_with_warmup
 

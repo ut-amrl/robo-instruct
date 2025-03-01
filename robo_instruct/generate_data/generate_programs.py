@@ -56,8 +56,8 @@ def gen_program(args):
             text = construct_text_field(inst, p)
             texts.append(text)
 
-    pd.DataFrame({'prompt': instructions[:5000], 'program': programs[:5000], "text": texts[:5000]}).to_csv(args.save_name, index=False) # temp
-
+    pd.DataFrame({'prompt': instructions, 'program': programs, "text": texts}).to_csv(args.save_name, index=False) # temp
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input_name", type=str, default="data/si_instructions.csv")
