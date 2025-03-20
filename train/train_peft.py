@@ -1,17 +1,16 @@
-
+from unsloth import FastLanguageModel
 from transformers import TrainingArguments, logging
 from datasets import load_dataset, load_from_disk
-from trl import SFTTrainer
+from trl import SFTTrainer, SFTConfig
 import os 
 import torch 
-from unsloth import FastLanguageModel
 import hydra 
 from omegaconf import DictConfig, OmegaConf
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
 @hydra.main(version_base=None, config_path="config", config_name="config")
 def main(cfg: DictConfig):
-    training_args = TrainingArguments(**cfg.training_args)
+    training_args = SFTConfig(**cfg.training_args)
     os.environ["WANDB_PROJECT"] = cfg.misc_args.wandb_project_name  # name your W&B project
     if cfg.misc_args.verbose:
         logging.set_verbosity_debug()
@@ -64,15 +63,18 @@ def main(cfg: DictConfig):
         ]
         return examples
     train_dataset = train_dataset.map(add_eos_to_batch, batched=True)
-
+    
+    training_args.packing = cfg.misc_args.packing
+    training_args.max_seq_length = cfg.misc_args.seq_length
+    training_args.dataset_text_field = dataset_text_field
     trainer = SFTTrainer(
         model=model,
         args = training_args,
         train_dataset=train_dataset,
         tokenizer=tokenizer,
-        packing = cfg.misc_args.packing,
-        max_seq_length = cfg.misc_args.seq_length,
-        dataset_text_field=dataset_text_field,
+        # packing = cfg.misc_args.packing,
+        # max_seq_length = cfg.misc_args.seq_length,
+        # dataset_text_field=dataset_text_field,
         data_collator=data_collator
     )
     

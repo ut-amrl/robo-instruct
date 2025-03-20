@@ -146,10 +146,10 @@ def setup_instruction_revision_prompts(df, tokenizer):
 
 def setup_decision_prompts(df, revisions, tokenizer):
     prompts = []
-    for index, row in df.iterrows():
+    for idx, (_, row)in enumerate(df.iterrows()):
         prompt = row["prompt"]
         program = row["program"]
-        explanation_new = revisions[index]
+        explanation_new = revisions[idx]
         
         question = f"""Which of the following is the best instruction for the given program?
 ### Program
