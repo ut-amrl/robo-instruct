@@ -7,7 +7,19 @@ import numpy as np
 from joblib import Parallel, delayed
 
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
-    
+
+def extract_python_code(text):
+    start_idx = text.find("```python")
+    if start_idx != -1:
+        start_idx = start_idx + len("```python")
+    else:
+        start_idx = 0
+    end_idx = text.find("```", start_idx)
+    if end_idx == -1:
+        end_idx = len(text)
+    code = text[start_idx:end_idx]
+    return code
+
 def eval_program(args):
     data = pd.read_csv(args.input_name)
     columns = data.columns.tolist()
@@ -22,6 +34,7 @@ def eval_program(args):
         for index, row in df_rows.iterrows():
             gen_count += 1
             program = row["program"]
+            program = extract_python_code(program)
             if type(program) == type(np.nan):
                 continue
             (trace_elements, status) = rejection_sampling_simulation(

@@ -5,7 +5,13 @@ __pycache__
 gpt4/
 data/
 eval/
-models/
+train/models/
 outputs/
 wandb/
 visualization/*.csv
+.openai_api_key
+.gemini_api_key
+03_01_gpt_data/
+ru_data/
+unsloth_compiled_cache
+visualization
