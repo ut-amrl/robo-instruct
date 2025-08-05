@@ -23,7 +23,8 @@ CD into the `train/` directory and install the training dependencies:
 
 ```bash
 cd train/
-pip install -r train_requirements.txt --index-url https://download.pytorch.org/whl/cu121
+pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+pip install -r train_requirements.txt 
 ```
 
 # 🚀 Training
@@ -32,7 +33,7 @@ We use Hydra for configuration management. All training configs are stored in th
 To start training:
 
 ```bash
-python train_peft.py +exps=llama_exp_ri
+CUDA_VISIBLE_DEVICES=0 python train_peft.py +exps=llama_exp_ri
 ```
 
 After training, merge the PEFT model with the base model:

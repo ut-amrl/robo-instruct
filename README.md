@@ -67,7 +67,7 @@ python roboeval.py --model_name_or_path {MODEL_PATH}
 Example:
 
 ```bash
-python roboeval.py --model_name_or_path zichao22/RI-FT-CL-7B-Python --num_completions 1 --temperature 0
+python roboeval.py --model_name_or_path zichao22/RI-FT-Llama3 --num_completions 1 --temperature 0
 ```
 
 See [roboeval.py](roboeval.py) for additional arguments and customization.
