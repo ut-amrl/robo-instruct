@@ -17,15 +17,21 @@ body {
 </style>
 
 <div class="text-center">
-  <a type="button" class="btn btn-outline-secondary" style="margin:20pt; height:40px;" href="https://github.com/ut-amrl/robo-instruct">
+  <a type="button" class="btn btn-link" style="margin:20pt; height:40px;" href="https://github.com/ut-amrl/robo-instruct">
     <h5>
       <img src="assets/images/github.png" style="height:30px;"/> Code
     </h5>
   </a>
 
-  <a role="button" class="btn btn-outline-secondary" style="margin:20pt; height:40px;" href="assets/documents/Democratizing_LLM_arvix.pdf">
+  <a role="button" class="btn btn-link" style="margin:20pt; height:40px;" href="https://arxiv.org/abs/2405.20179">
     <h5>
       <img src="assets/images/document_icon.png" style="height:30px;"/> Paper
+    </h5>
+  </a>
+
+  <a role="button" class="btn btn-link" style="margin:20pt; height:40px;" href="https://huggingface.co/collections/zichao22/robo-instruct-666089a7338b72a3275f9e69">
+    <h5>
+      <img src="assets/images/huggingface.png" style="height:30px;"/> Models/Datasets
     </h5>
   </a>
 </div>
