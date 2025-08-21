@@ -1,6 +1,6 @@
 # Robo-Instruct: Simulator-Augmented Instruction Alignment for Finetuning CodeLLMs
 
-**[[Project Page]](https://amrl.cs.utexas.edu/robo-instruct/) • [[Paper]](https://amrl.cs.utexas.edu/robo-instruct/assets/documents/Democratizing_LLM_arvix.pdf)**
+**[[Project Page]](https://amrl.cs.utexas.edu/robo-instruct/) • [[Paper]](https://arxiv.org/abs/2405.20179)**
 
 Zichao Hu<sup>1</sup>, Junyi Jessy Li<sup>1</sup>, Arjun Guha<sup>2</sup>, Joydeep Biswas<sup>1</sup>  
 <sup>1</sup>UT Austin  <sup>2</sup>Northeastern University
