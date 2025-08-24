@@ -15,7 +15,9 @@ body {
   font-size: 18px; /* or whatever size you prefer */
 }
 </style>
-
+<div style="color:red; text-align:center; font-weight:bold; margin:1em 0;">
+  Accepted at <a href="https://colmweb.org/" style="color:red;">COLM 2025</a>
+</div>
 <div class="text-center">
   <a type="button" class="btn btn-link" style="margin:20pt; height:40px;" href="https://github.com/ut-amrl/robo-instruct">
     <h5>
