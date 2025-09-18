@@ -105,12 +105,12 @@ To address this challenge, ROBO-INSTRUCT employs a post-processing procedure to 
 
 #### Citation
 ```shell
-@misc{hu2024roboinstruct,
-      title={Robo-Instruct: Simulator-Augmented Instruction Alignment For Finetuning CodeLLMs}, 
-      author={Zichao Hu and Junyi Jessy Li and Arjun Guha and Joydeep Biswas},
-      year={2024},
-      eprint={2405.20179},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{
+  hu2025roboinstruct,
+  title={Robo-Instruct: Simulator-Augmented Instruction Alignment For Finetuning Code {LLM}s},
+  author={Zichao Hu and Junyi Jessy Li and Arjun Guha and Joydeep Biswas},
+  booktitle={Second Conference on Language Modeling},
+  year={2025},
+  url={https://openreview.net/forum?id=WnZjdQOWiY}
 }
 ```
